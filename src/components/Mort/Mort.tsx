@@ -7,31 +7,31 @@ import {
     AccordionDetails,
     Card,
     CardContent,
-    CardMedia,
+    // CardMedia,
     Grid,
     Box,
     Button,
-    Dialog,
-    DialogContent,
-    DialogContentText,
+    // Dialog,
+    // DialogContent,
+    // DialogContentText,
     Stack,
     Typography,
-    Snackbar,
-    TextField,
-    Alert } from '@mui/material'; 
+    // Snackbar,
+    // TextField,
+     } from '@mui/material'; 
 
 import InfoIcon from '@mui/icons-material/Info';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { getDatabase, ref, push } from 'firebase/database'
+// import { getDatabase, ref, push } from 'firebase/database'
 
 
 // internal imports
-import { useGetShop, ShopProps } from '../../customHooks';
+// import {  ShopProps } from '../../customHooks';  //useGetShop,
 import { NavBar, InputText } from '../sharedComponents';
 import { theme } from '../../Theme/themes';
-import { MessageType } from '../Auth';
+// import { MessageType } from '../Auth';
 import { mortCalls } from '../../api';
-import { display, flexbox } from '@mui/system';
+// import { display, flexbox } from '@mui/system';
 import shopImage from '../../assets/images/nona-orlando.jpeg'; 
 
 
@@ -132,12 +132,12 @@ export const Mort = () => {
     // setup our hooks
     // const { shopData } = useGetShop(); //list of all our data objects 
     const [MortData, setMortData] = useState<[]>([])
-    const [ currentShop, setCurrentShop] = useState<ShopProps>(); //one and only one object we will send to our cart 
-    const [ cartOpen, setCartOpen ] = useState(false); 
+    // const [ currentShop, setCurrentShop] = useState<ShopProps>(); //one and only one object we will send to our cart 
+    // const [ cartOpen, setCartOpen ] = useState(false); 
     const { register, handleSubmit } = useForm<SubmitMort>({})
-    const [ message, setMessage] = useState<string>()
-    const [ messageType, setMessageType ] = useState<MessageType>()
-    const [ open, setOpen ] = useState(false)
+    // const [ message, setMessage] = useState<string>()
+    // const [ messageType, setMessageType ] = useState<MessageType>()
+    // const [ open, setOpen ] = useState(false)
 
     const onSubmit: SubmitHandler<SubmitMort> = async (data: SubmitMort, event: any) => {
         if (event) event.preventDefault(); 

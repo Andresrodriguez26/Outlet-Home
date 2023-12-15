@@ -11,13 +11,13 @@ import {
     Grid,
     Box,
     Button,
-    Dialog,
-    DialogContent,
-    DialogContentText,
+    // Dialog,
+    // DialogContent,
+    // DialogContentText,
     Stack,
     Typography,
     Snackbar,
-    TextField,
+    // TextField,
     Alert } from '@mui/material'; 
 // import Accordion from '@mui/material/Accordion';
 // import AccordionSummary from '@mui/material/AccordionSummary';
@@ -34,12 +34,12 @@ import { getDatabase, ref, push } from 'firebase/database'
 
 
 // internal imports
-import { useGetShop, ShopProps } from '../../customHooks';
+import {  ShopProps } from '../../customHooks'; //useGetShop,
 import { NavBar, InputText } from '../sharedComponents';
 import { theme } from '../../Theme/themes';
 import { MessageType } from '../Auth';
 import { serverCalls } from '../../api';
-import { display, flexbox } from '@mui/system';
+// import { display, flexbox } from '@mui/system';
 import shopImage from '../../assets/images/nona-orlando.jpeg'; 
 
 
@@ -128,9 +128,9 @@ export interface SubmitProps {
    
 
 
-interface CartProps {
-    cartItem: ShopProps
-}
+// interface CartProps {
+//     cartItem: ShopProps
+// }
 
 
 // const AddToCart = (cart: CartProps ) => {
@@ -196,8 +196,8 @@ export const Shop = () => {
     // setup our hooks
     // const { shopData } = useGetShop(); //list of all our data objects 
     const [shopData, setShopData] = useState<[]>([])
-    const [ currentShop, setCurrentShop] = useState<ShopProps>(); //one and only one object we will send to our cart 
-    const [ cartOpen, setCartOpen ] = useState(false); 
+    const [ currentShop] = useState<ShopProps>(); //one and only one object we will send to our cart //, setCurrentShop
+    // const [ cartOpen, setCartOpen ] = useState(false); 
     const { register, handleSubmit } = useForm<SubmitProps>({})
     const [ message, setMessage] = useState<string>()
     const [ messageType, setMessageType ] = useState<MessageType>()

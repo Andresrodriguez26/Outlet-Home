@@ -10,22 +10,22 @@ import {
     Grid,
     Box,
     Button,
-    Dialog,
-    DialogContent,
-    DialogContentText,
+    // Dialog,
+    // DialogContent,
+    // DialogContentText,
     Stack,
     Typography,
     Snackbar,
     Alert } from '@mui/material'; 
 import InfoIcon from '@mui/icons-material/Info';
-import { getDatabase, ref, onValue, off, remove, update } from 'firebase/database';
+import { getDatabase, ref, onValue, off, remove } from 'firebase/database'; //, update
 
 // internal imports
 import { NavBar } from '../sharedComponents';
 import { theme } from '../../Theme/themes';
 import { ShopProps } from '../../customHooks';
 import { shopStyles } from '../Shop';
-import { serverCalls } from '../../api';
+// import { serverCalls } from '../../api';
 import { MessageType } from '../Auth'; 
 import shopImage from '../../assets/images/production_id_4770380 (1080p).mp4'
 
@@ -134,29 +134,29 @@ export const Cart = () => {
     // }
 
     // function to update cart items
-    const updateCart = async ( cartItem: ShopProps ) => {
+    // const updateCart = async ( cartItem: ShopProps ) => {
 
-        const itemRef = ref(db, `carts/${userId}/${cartItem.id}`)
+    //     const itemRef = ref(db, `carts/${userId}/${cartItem.id}`)
 
 
-        // use the update() from our database to update a specific cart item
-        update(itemRef, {
-            quantity: cartItem.address // quantity
-        })
-        .then(() => {
-            setMessage('Successfully Updated Your Cart')
-            setMessageType('success')
-            setOpen(true)
-        })
-        .then(() => {
-            setTimeout(() => window.location.reload(), 2000)
-        })
-        .catch((error) => {
-            setMessage(error.message)
-            setMessageType('error')
-            setOpen(true)
-        })
-    }
+    //     // use the update() from our database to update a specific cart item
+    //     update(itemRef, {
+    //         quantity: cartItem.address // quantity
+    //     })
+    //     .then(() => {
+    //         setMessage('Successfully Updated Your Cart')
+    //         setMessageType('success')
+    //         setOpen(true)
+    //     })
+    //     .then(() => {
+    //         setTimeout(() => window.location.reload(), 2000)
+    //     })
+    //     .catch((error) => {
+    //         setMessage(error.message)
+    //         setMessageType('error')
+    //         setOpen(true)
+    //     })
+    // } ////////
 
 
     // function to delete items from our cart
